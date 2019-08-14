@@ -33,18 +33,17 @@
             this.NextButton = new System.Windows.Forms.Button();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.IdentityPage = new System.Windows.Forms.TabPage();
-            this.AbilityPage = new System.Windows.Forms.TabPage();
-            this.InventoryPage = new System.Windows.Forms.TabPage();
-            this.CharacterSheetPage = new System.Windows.Forms.TabPage();
             this.IdentityTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.CharacterNameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.LastNameLabel = new System.Windows.Forms.Label();
             this.CharacterNameTextBox = new System.Windows.Forms.TextBox();
+            this.LastNameLabel = new System.Windows.Forms.Label();
             this.FirstNameDataLabel = new System.Windows.Forms.Label();
             this.LastNameDataLabel = new System.Windows.Forms.Label();
+            this.AbilityPage = new System.Windows.Forms.TabPage();
             this.AbilitiesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.StrengthDataLabel = new System.Windows.Forms.Label();
             this.GenerateAbilitiesButton = new System.Windows.Forms.Button();
             this.StrengthLabel = new System.Windows.Forms.Label();
             this.DexterityLabel = new System.Windows.Forms.Label();
@@ -52,12 +51,18 @@
             this.IntelligenceLabel = new System.Windows.Forms.Label();
             this.WisdomLabel = new System.Windows.Forms.Label();
             this.CharismaLabel = new System.Windows.Forms.Label();
-            this.StrengthDataLabel = new System.Windows.Forms.Label();
-            this.WisdomDataLabel = new System.Windows.Forms.Label();
+            this.DexterityDataLabel = new System.Windows.Forms.Label();
             this.ConstitutionDataLabel = new System.Windows.Forms.Label();
             this.IntelligenceDataLabel = new System.Windows.Forms.Label();
-            this.DexterityDataLabel = new System.Windows.Forms.Label();
+            this.WisdomDataLabel = new System.Windows.Forms.Label();
             this.CharismaDataLabel = new System.Windows.Forms.Label();
+            this.InventoryPage = new System.Windows.Forms.TabPage();
+            this.CharacterSheetPage = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,19 +73,14 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.MainTabControl.SuspendLayout();
             this.IdentityPage.SuspendLayout();
-            this.AbilityPage.SuspendLayout();
-            this.CharacterSheetPage.SuspendLayout();
             this.IdentityTableLayoutPanel.SuspendLayout();
+            this.AbilityPage.SuspendLayout();
             this.AbilitiesTableLayoutPanel.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.CharacterSheetPage.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackButton
@@ -127,39 +127,6 @@
             this.IdentityPage.Text = "Identity";
             this.IdentityPage.UseVisualStyleBackColor = true;
             // 
-            // AbilityPage
-            // 
-            this.AbilityPage.Controls.Add(this.AbilitiesTableLayoutPanel);
-            this.AbilityPage.Location = new System.Drawing.Point(4, 33);
-            this.AbilityPage.Name = "AbilityPage";
-            this.AbilityPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AbilityPage.Size = new System.Drawing.Size(776, 436);
-            this.AbilityPage.TabIndex = 1;
-            this.AbilityPage.Text = "Abilities";
-            this.AbilityPage.UseVisualStyleBackColor = true;
-            // 
-            // InventoryPage
-            // 
-            this.InventoryPage.Location = new System.Drawing.Point(4, 33);
-            this.InventoryPage.Name = "InventoryPage";
-            this.InventoryPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InventoryPage.Size = new System.Drawing.Size(776, 436);
-            this.InventoryPage.TabIndex = 2;
-            this.InventoryPage.Text = "Inventory";
-            this.InventoryPage.UseVisualStyleBackColor = true;
-            // 
-            // CharacterSheetPage
-            // 
-            this.CharacterSheetPage.Controls.Add(this.toolStrip1);
-            this.CharacterSheetPage.Controls.Add(this.menuStrip1);
-            this.CharacterSheetPage.Location = new System.Drawing.Point(4, 33);
-            this.CharacterSheetPage.Name = "CharacterSheetPage";
-            this.CharacterSheetPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CharacterSheetPage.Size = new System.Drawing.Size(776, 436);
-            this.CharacterSheetPage.TabIndex = 3;
-            this.CharacterSheetPage.Text = "Character Sheet";
-            this.CharacterSheetPage.UseVisualStyleBackColor = true;
-            // 
             // IdentityTableLayoutPanel
             // 
             this.IdentityTableLayoutPanel.ColumnCount = 4;
@@ -194,6 +161,7 @@
             this.GenerateButton.TabIndex = 2;
             this.GenerateButton.Text = "Generate Name";
             this.GenerateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // CharacterNameLabel
             // 
@@ -219,18 +187,6 @@
             this.FirstNameLabel.Text = "First Name";
             this.FirstNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LastNameLabel
-            // 
-            this.LastNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LastNameLabel.Location = new System.Drawing.Point(3, 136);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(222, 68);
-            this.LastNameLabel.TabIndex = 3;
-            this.LastNameLabel.Text = "Last Name";
-            this.LastNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CharacterNameTextBox
             // 
             this.CharacterNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -242,6 +198,18 @@
             this.CharacterNameTextBox.Name = "CharacterNameTextBox";
             this.CharacterNameTextBox.Size = new System.Drawing.Size(528, 62);
             this.CharacterNameTextBox.TabIndex = 4;
+            // 
+            // LastNameLabel
+            // 
+            this.LastNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastNameLabel.Location = new System.Drawing.Point(3, 136);
+            this.LastNameLabel.Name = "LastNameLabel";
+            this.LastNameLabel.Size = new System.Drawing.Size(222, 68);
+            this.LastNameLabel.TabIndex = 3;
+            this.LastNameLabel.Text = "Last Name";
+            this.LastNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FirstNameDataLabel
             // 
@@ -270,6 +238,17 @@
             this.LastNameDataLabel.Size = new System.Drawing.Size(528, 68);
             this.LastNameDataLabel.TabIndex = 3;
             this.LastNameDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AbilityPage
+            // 
+            this.AbilityPage.Controls.Add(this.AbilitiesTableLayoutPanel);
+            this.AbilityPage.Location = new System.Drawing.Point(4, 33);
+            this.AbilityPage.Name = "AbilityPage";
+            this.AbilityPage.Padding = new System.Windows.Forms.Padding(3);
+            this.AbilityPage.Size = new System.Drawing.Size(776, 436);
+            this.AbilityPage.TabIndex = 1;
+            this.AbilityPage.Text = "Abilities";
+            this.AbilityPage.UseVisualStyleBackColor = true;
             // 
             // AbilitiesTableLayoutPanel
             // 
@@ -305,6 +284,19 @@
             this.AbilitiesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.AbilitiesTableLayoutPanel.Size = new System.Drawing.Size(760, 381);
             this.AbilitiesTableLayoutPanel.TabIndex = 0;
+            // 
+            // StrengthDataLabel
+            // 
+            this.StrengthDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StrengthDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.StrengthDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.StrengthDataLabel.Location = new System.Drawing.Point(193, 0);
+            this.StrengthDataLabel.Name = "StrengthDataLabel";
+            this.StrengthDataLabel.Size = new System.Drawing.Size(184, 47);
+            this.StrengthDataLabel.TabIndex = 5;
+            this.StrengthDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GenerateAbilitiesButton
             // 
@@ -388,31 +380,18 @@
             this.CharismaLabel.Text = "Charisma";
             this.CharismaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // StrengthDataLabel
+            // DexterityDataLabel
             // 
-            this.StrengthDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DexterityDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.StrengthDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.StrengthDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StrengthDataLabel.Location = new System.Drawing.Point(193, 0);
-            this.StrengthDataLabel.Name = "StrengthDataLabel";
-            this.StrengthDataLabel.Size = new System.Drawing.Size(184, 47);
-            this.StrengthDataLabel.TabIndex = 5;
-            this.StrengthDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // WisdomDataLabel
-            // 
-            this.WisdomDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.WisdomDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.WisdomDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WisdomDataLabel.Location = new System.Drawing.Point(193, 188);
-            this.WisdomDataLabel.Name = "WisdomDataLabel";
-            this.WisdomDataLabel.Size = new System.Drawing.Size(184, 47);
-            this.WisdomDataLabel.TabIndex = 10;
-            this.WisdomDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DexterityDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DexterityDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DexterityDataLabel.Location = new System.Drawing.Point(193, 47);
+            this.DexterityDataLabel.Name = "DexterityDataLabel";
+            this.DexterityDataLabel.Size = new System.Drawing.Size(184, 47);
+            this.DexterityDataLabel.TabIndex = 13;
+            this.DexterityDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ConstitutionDataLabel
             // 
@@ -440,18 +419,18 @@
             this.IntelligenceDataLabel.TabIndex = 12;
             this.IntelligenceDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // DexterityDataLabel
+            // WisdomDataLabel
             // 
-            this.DexterityDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.WisdomDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DexterityDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DexterityDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DexterityDataLabel.Location = new System.Drawing.Point(193, 47);
-            this.DexterityDataLabel.Name = "DexterityDataLabel";
-            this.DexterityDataLabel.Size = new System.Drawing.Size(184, 47);
-            this.DexterityDataLabel.TabIndex = 13;
-            this.DexterityDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WisdomDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.WisdomDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WisdomDataLabel.Location = new System.Drawing.Point(193, 188);
+            this.WisdomDataLabel.Name = "WisdomDataLabel";
+            this.WisdomDataLabel.Size = new System.Drawing.Size(184, 47);
+            this.WisdomDataLabel.TabIndex = 10;
+            this.WisdomDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CharismaDataLabel
             // 
@@ -466,82 +445,27 @@
             this.CharismaDataLabel.TabIndex = 14;
             this.CharismaDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // menuStrip1
+            // InventoryPage
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(770, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.InventoryPage.Location = new System.Drawing.Point(4, 33);
+            this.InventoryPage.Name = "InventoryPage";
+            this.InventoryPage.Padding = new System.Windows.Forms.Padding(3);
+            this.InventoryPage.Size = new System.Drawing.Size(776, 436);
+            this.InventoryPage.TabIndex = 2;
+            this.InventoryPage.Text = "Inventory";
+            this.InventoryPage.UseVisualStyleBackColor = true;
             // 
-            // fileToolStripMenuItem
+            // CharacterSheetPage
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.toolStripSeparator,
-            this.saveToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator5,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "&About...";
+            this.CharacterSheetPage.Controls.Add(this.toolStrip1);
+            this.CharacterSheetPage.Controls.Add(this.menuStrip1);
+            this.CharacterSheetPage.Location = new System.Drawing.Point(4, 33);
+            this.CharacterSheetPage.Name = "CharacterSheetPage";
+            this.CharacterSheetPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CharacterSheetPage.Size = new System.Drawing.Size(776, 436);
+            this.CharacterSheetPage.TabIndex = 3;
+            this.CharacterSheetPage.Text = "Character Sheet";
+            this.CharacterSheetPage.UseVisualStyleBackColor = true;
             // 
             // toolStrip1
             // 
@@ -588,6 +512,83 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(770, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.toolStripSeparator,
+            this.saveToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            // 
             // CharacterGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -598,18 +599,19 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CharacterGeneratorForm";
             this.Text = "Character Generator";
+            this.Load += new System.EventHandler(this.CharacterGeneratorForm_Load);
             this.MainTabControl.ResumeLayout(false);
             this.IdentityPage.ResumeLayout(false);
-            this.AbilityPage.ResumeLayout(false);
-            this.CharacterSheetPage.ResumeLayout(false);
-            this.CharacterSheetPage.PerformLayout();
             this.IdentityTableLayoutPanel.ResumeLayout(false);
             this.IdentityTableLayoutPanel.PerformLayout();
+            this.AbilityPage.ResumeLayout(false);
             this.AbilitiesTableLayoutPanel.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.CharacterSheetPage.ResumeLayout(false);
+            this.CharacterSheetPage.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
