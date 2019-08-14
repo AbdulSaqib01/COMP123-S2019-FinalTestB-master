@@ -18,10 +18,12 @@ namespace COMP123_S2019_FinalTestB.Views
         // String Lists
         public static List<string> FirstNameList;
         public static List<string> LastNameList;
+        public static List<string> InventoryList;
 
         // String Arrays
         public static string[] firstNames;
         public static string[] lastNames;
+        public static string[] inventory;
 
         public CharacterGeneratorForm()
         {
@@ -112,6 +114,7 @@ namespace COMP123_S2019_FinalTestB.Views
         {
             LoadNames(out firstNames, out lastNames);
             GenerateNames(firstNames, lastNames);
+            LoadInventory();
         }
 
         private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
@@ -142,6 +145,45 @@ namespace COMP123_S2019_FinalTestB.Views
             Program.character.Intelligence = intelligenceNumRange.ToString();
             Program.character.Wisdom = wisdomNumRange.ToString();
             Program.character.Charisma = charismaNumRange.ToString();
+        }
+
+        private void GenerateInventoryItemsButton_Click(object sender, EventArgs e)
+        {
+            GenerateRandomInventory();
+        }
+
+        private void GenerateRandomInventory()
+        {
+            var randItem = new Random();
+
+            var randomInventoryItems1 = randItem.Next(0, inventory.Length - 1);
+            var numOfItems1 = inventory[randomInventoryItems1];
+            var randomInventoryItems2 = randItem.Next(0, inventory.Length - 1);
+            var numOfItems2 = inventory[randomInventoryItems2];
+            var randomInventoryItems3 = randItem.Next(0, inventory.Length - 1);
+            var numOfItems3 = inventory[randomInventoryItems3];
+            var randomInventoryItems4 = randItem.Next(0, inventory.Length - 1);
+            var numOfItems4 = inventory[randomInventoryItems4];
+
+            InventoryList.Add(numOfItems1);
+            InventoryList.Add(numOfItems2);
+            InventoryList.Add(numOfItems3);
+            InventoryList.Add(numOfItems4);
+
+            OneDataLabel.Text = numOfItems1.ToString();
+            TwoDataLabel.Text = numOfItems2.ToString();
+            ThirdDataLabel.Text = numOfItems3.ToString();
+            FourthDataLabel.Text = numOfItems4.ToString();
+
+            Program
+           
+        }
+
+        private void LoadInventory()
+        {
+            InventoryList = new List<string>();
+
+            inventory = File.ReadAllLines("Inventory.txt");
         }
     }
 }

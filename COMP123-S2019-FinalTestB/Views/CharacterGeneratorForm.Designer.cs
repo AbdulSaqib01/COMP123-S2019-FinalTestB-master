@@ -73,14 +73,26 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.OneLabel = new System.Windows.Forms.Label();
+            this.ThirdLabel = new System.Windows.Forms.Label();
+            this.FourthLabel = new System.Windows.Forms.Label();
+            this.TwoLabel = new System.Windows.Forms.Label();
+            this.OneDataLabel = new System.Windows.Forms.Label();
+            this.TwoDataLabel = new System.Windows.Forms.Label();
+            this.ThirdDataLabel = new System.Windows.Forms.Label();
+            this.FourthDataLabel = new System.Windows.Forms.Label();
+            this.GenerateInventoryItemsButton = new System.Windows.Forms.Button();
             this.MainTabControl.SuspendLayout();
             this.IdentityPage.SuspendLayout();
             this.IdentityTableLayoutPanel.SuspendLayout();
             this.AbilityPage.SuspendLayout();
             this.AbilitiesTableLayoutPanel.SuspendLayout();
+            this.InventoryPage.SuspendLayout();
             this.CharacterSheetPage.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackButton
@@ -448,6 +460,7 @@
             // 
             // InventoryPage
             // 
+            this.InventoryPage.Controls.Add(this.tableLayoutPanel1);
             this.InventoryPage.Location = new System.Drawing.Point(4, 33);
             this.InventoryPage.Name = "InventoryPage";
             this.InventoryPage.Padding = new System.Windows.Forms.Padding(3);
@@ -590,6 +603,146 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.OneLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.FourthLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.TwoLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ThirdLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.OneDataLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TwoDataLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ThirdDataLabel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.FourthDataLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.GenerateInventoryItemsButton, 3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 374);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // OneLabel
+            // 
+            this.OneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OneLabel.Location = new System.Drawing.Point(3, 0);
+            this.OneLabel.Name = "OneLabel";
+            this.OneLabel.Size = new System.Drawing.Size(184, 93);
+            this.OneLabel.TabIndex = 8;
+            this.OneLabel.Text = "1";
+            this.OneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ThirdLabel
+            // 
+            this.ThirdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThirdLabel.Location = new System.Drawing.Point(3, 186);
+            this.ThirdLabel.Name = "ThirdLabel";
+            this.ThirdLabel.Size = new System.Drawing.Size(184, 93);
+            this.ThirdLabel.TabIndex = 9;
+            this.ThirdLabel.Text = "3";
+            this.ThirdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FourthLabel
+            // 
+            this.FourthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FourthLabel.Location = new System.Drawing.Point(3, 279);
+            this.FourthLabel.Name = "FourthLabel";
+            this.FourthLabel.Size = new System.Drawing.Size(184, 95);
+            this.FourthLabel.TabIndex = 10;
+            this.FourthLabel.Text = "4";
+            this.FourthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TwoLabel
+            // 
+            this.TwoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TwoLabel.Location = new System.Drawing.Point(3, 93);
+            this.TwoLabel.Name = "TwoLabel";
+            this.TwoLabel.Size = new System.Drawing.Size(184, 93);
+            this.TwoLabel.TabIndex = 11;
+            this.TwoLabel.Text = "2";
+            this.TwoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OneDataLabel
+            // 
+            this.OneDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OneDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.OneDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OneDataLabel.Location = new System.Drawing.Point(193, 0);
+            this.OneDataLabel.Name = "OneDataLabel";
+            this.OneDataLabel.Size = new System.Drawing.Size(184, 93);
+            this.OneDataLabel.TabIndex = 12;
+            this.OneDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TwoDataLabel
+            // 
+            this.TwoDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TwoDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TwoDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TwoDataLabel.Location = new System.Drawing.Point(193, 93);
+            this.TwoDataLabel.Name = "TwoDataLabel";
+            this.TwoDataLabel.Size = new System.Drawing.Size(184, 93);
+            this.TwoDataLabel.TabIndex = 13;
+            this.TwoDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ThirdDataLabel
+            // 
+            this.ThirdDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThirdDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ThirdDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ThirdDataLabel.Location = new System.Drawing.Point(193, 186);
+            this.ThirdDataLabel.Name = "ThirdDataLabel";
+            this.ThirdDataLabel.Size = new System.Drawing.Size(184, 93);
+            this.ThirdDataLabel.TabIndex = 14;
+            this.ThirdDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FourthDataLabel
+            // 
+            this.FourthDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FourthDataLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FourthDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FourthDataLabel.Location = new System.Drawing.Point(193, 279);
+            this.FourthDataLabel.Name = "FourthDataLabel";
+            this.FourthDataLabel.Size = new System.Drawing.Size(184, 95);
+            this.FourthDataLabel.TabIndex = 15;
+            this.FourthDataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // GenerateInventoryItemsButton
+            // 
+            this.GenerateInventoryItemsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GenerateInventoryItemsButton.Location = new System.Drawing.Point(573, 282);
+            this.GenerateInventoryItemsButton.Name = "GenerateInventoryItemsButton";
+            this.GenerateInventoryItemsButton.Size = new System.Drawing.Size(184, 89);
+            this.GenerateInventoryItemsButton.TabIndex = 16;
+            this.GenerateInventoryItemsButton.Text = "Generate Items";
+            this.GenerateInventoryItemsButton.UseVisualStyleBackColor = true;
+            this.GenerateInventoryItemsButton.Click += new System.EventHandler(this.GenerateInventoryItemsButton_Click);
+            // 
             // CharacterGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -607,12 +760,14 @@
             this.IdentityTableLayoutPanel.PerformLayout();
             this.AbilityPage.ResumeLayout(false);
             this.AbilitiesTableLayoutPanel.ResumeLayout(false);
+            this.InventoryPage.ResumeLayout(false);
             this.CharacterSheetPage.ResumeLayout(false);
             this.CharacterSheetPage.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -663,5 +818,15 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label OneLabel;
+        private System.Windows.Forms.Label FourthLabel;
+        private System.Windows.Forms.Label TwoLabel;
+        private System.Windows.Forms.Label ThirdLabel;
+        private System.Windows.Forms.Label OneDataLabel;
+        private System.Windows.Forms.Label TwoDataLabel;
+        private System.Windows.Forms.Label ThirdDataLabel;
+        private System.Windows.Forms.Label FourthDataLabel;
+        private System.Windows.Forms.Button GenerateInventoryItemsButton;
     }
 }
