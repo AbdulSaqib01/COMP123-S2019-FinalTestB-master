@@ -15,8 +15,11 @@ namespace COMP123_S2019_FinalTestB.Views
 {
     public partial class CharacterGeneratorForm : MasterForm
     {
+        // String Lists
         public static List<string> FirstNameList;
         public static List<string> LastNameList;
+
+        // String Arrays
         public static string[] firstNames;
         public static string[] lastNames;
 
@@ -25,6 +28,11 @@ namespace COMP123_S2019_FinalTestB.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This is event handler for BackButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (MainTabControl.SelectedIndex != 0)
@@ -33,6 +41,11 @@ namespace COMP123_S2019_FinalTestB.Views
             }
         }
 
+        /// <summary>
+        /// This is event handler NextButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             if (MainTabControl.SelectedIndex < MainTabControl.TabPages.Count -1)
@@ -41,6 +54,11 @@ namespace COMP123_S2019_FinalTestB.Views
             }
         }
 
+        /// <summary>
+        /// This is event handler GenerateButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GenerateButton_Click(object sender, EventArgs e)
         {
             GenerateNames(firstNames, lastNames);
@@ -48,6 +66,11 @@ namespace COMP123_S2019_FinalTestB.Views
             Program.character.LastName = lastNames.ToString();
         }
 
+        /// <summary>
+        /// This method generates random first names and last names
+        /// </summary>
+        /// <param name="firstNames"></param>
+        /// <param name="lastNames"></param>
         private void GenerateNames(string[] firstNames, string[] lastNames)
         {
             var rand = new Random();
@@ -65,6 +88,11 @@ namespace COMP123_S2019_FinalTestB.Views
             LastNameDataLabel.Text = numOfLastNames.ToString();
         }
 
+        /// <summary>
+        /// This method load names from the txt files
+        /// </summary>
+        /// <param name="firstNames"></param>
+        /// <param name="lastNames"></param>
         private static void LoadNames(out string[] firstNames, out string[] lastNames)
         {
             FirstNameList = new List<string>();
@@ -75,10 +103,45 @@ namespace COMP123_S2019_FinalTestB.Views
             lastNames = File.ReadAllLines("lastNames.txt");
         }
 
+        /// <summary>
+        /// This is event handler CharacterGenerateForm Load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CharacterGeneratorForm_Load(object sender, EventArgs e)
         {
             LoadNames(out firstNames, out lastNames);
             GenerateNames(firstNames, lastNames);
+        }
+
+        private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
+        {
+            GenerateRandomAbilities();
+        }
+
+        private void GenerateRandomAbilities()
+        {
+            var randNum = new Random();
+            int strengthNumRange = randNum.Next(3, 18);
+            int dexterityNumRange = randNum.Next(3, 18);
+            int ConstitutionNumRange = randNum.Next(3, 18);
+            int intelligenceNumRange = randNum.Next(3, 18);
+            int wisdomNumRange = randNum.Next(3, 18);
+            int charismaNumRange = randNum.Next(3, 18);
+
+            StrengthDataLabel.Text = strengthNumRange.ToString();
+            DexterityDataLabel.Text = dexterityNumRange.ToString();
+            ConstitutionDataLabel.Text = ConstitutionNumRange.ToString();
+            IntelligenceDataLabel.Text = intelligenceNumRange.ToString();
+            WisdomDataLabel.Text = wisdomNumRange.ToString();
+            CharismaDataLabel.Text = charismaNumRange.ToString();
+
+            Program.character.Strength = strengthNumRange.ToString();
+            Program.character.Dexterity = dexterityNumRange.ToString();
+            Program.character.Constitution = ConstitutionNumRange.ToString();
+            Program.character.Intelligence = intelligenceNumRange.ToString();
+            Program.character.Wisdom = wisdomNumRange.ToString();
+            Program.character.Charisma = charismaNumRange.ToString();
         }
     }
 }
